@@ -29,7 +29,8 @@ module.exports.schema = {
     "email": {
       "type": "string",
       "minLength": 8,
-      "maxLength": 50
+      "maxLength": 50,
+      "unique": true
     },
     "emailVerified": {
       "type": "boolean"
@@ -37,12 +38,14 @@ module.exports.schema = {
     "phoneNo": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 15
+      "maxLength": 15,
+      "unique": true
     },
     "mobileNo": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 15
+      "maxLength": 15,
+      "unique": true
     },
     "mobileVerified": {
       "type": "boolean"

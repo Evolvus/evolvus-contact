@@ -24,10 +24,10 @@ describe('contact model validation', () => {
     "firstName": "contactObj",
     "middleName": "saravanan",
     "lastName": "R",
-    "email": "saravanan2@yahoo.com",
+    "email": "hari2@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "265123",
-    "mobileNo": "98886312",
+    "phoneNo": "789222987",
+    "mobileNo": "9888631278",
     "mobileVerified": true,
     "faxNumber": "122341",
     "companyName": "Evolvus",
@@ -154,8 +154,8 @@ describe('contact model validation', () => {
         "lastName": "R",
         "email": "obj1@yahoo.com",
         "emailVerified": true,
-        "phoneNo": "265123",
-        "mobileNo": "9889586312",
+        "phoneNo": "911234921678",
+        "mobileNo": "7889586312",
         "mobileVerified": true,
         "faxNumber": "122341",
         "companyName": "Lesus",
@@ -174,8 +174,8 @@ describe('contact model validation', () => {
         "lastName": "R",
         "email": "ravanan2@yahoo.com",
         "emailVerified": true,
-        "phoneNo": "265123",
-        "mobileNo": "9888586312",
+        "phoneNo": "785124102",
+        "mobileNo": "6888586312",
         "mobileVerified": true,
         "faxNumber": "122341",
         "companyName": "Evolvus",
@@ -187,7 +187,7 @@ describe('contact model validation', () => {
         "zipCode": "686834"
       };
 
-    object3 = {
+    let object3 = {
       //add one more valid contact object here
       "tenantId": "Obj3",
       "firstName": "contactObj",
@@ -195,8 +195,8 @@ describe('contact model validation', () => {
       "lastName": "R",
       "email": "svananmn2@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "265123",
-      "mobileNo": "9888586312",
+      "phoneNo": "26547845632",
+      "mobileNo": "8888586312",
       "mobileVerified": true,
       "faxNumber": "122341",
       "companyName": "Evolvus",
@@ -327,11 +327,35 @@ describe('contact model validation', () => {
     // 2. Query by an arbitrary id and it should return {}
     // 3. Query with null id and it should throw IllegalArgumentException
     // 4. Query with undefined and it should throw IllegalArgumentException
+    let object1 = {
+      //add one valid contact object here
+      "tenantId": "tenIdObj1",
+      "firstName": "Obj1",
+      "middleName": "saravanan",
+      "lastName": "R",
+      "email": "obj1@yahoo.com",
+      "emailVerified": true,
+      "phoneNo": "4921678365",
+      "mobileNo": "7889586312",
+      "mobileVerified": true,
+      "faxNumber": "122341",
+      "companyName": "Lesus",
+      "Address1": "Mgroad",
+      "Address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
+      "zipCode": "686834"
+    };
+
     var id;
+
     beforeEach((done) => {
-      db.save(contactObject).then((res) => {
-        id = res._id;
-        done();
+      db.deleteAll().then((res) => {
+        db.save(object1).then((res) => {
+          id = res._id;
+          done();
+        });
       });
     });
 
@@ -398,10 +422,10 @@ describe('contact model validation', () => {
         "firstName": "idObj1",
         "middleName": "idsaravanan",
         "lastName": "Ros",
-        "email": "obj1@yahoo.com",
+        "email": "obj1@gmail.com",
         "emailVerified": true,
-        "phoneNo": "265123",
-        "mobileNo": "9889586312",
+        "phoneNo": "12345678910",
+        "mobileNo": "7899586312",
         "mobileVerified": true,
         "faxNumber": "122341",
         "companyName": "Lesus",
@@ -420,8 +444,8 @@ describe('contact model validation', () => {
         "lastName": "Rer",
         "email": "obj1@yahoo.com",
         "emailVerified": true,
-        "phoneNo": "265123",
-        "mobileNo": "9889586312",
+        "phoneNo": "7896543214",
+        "mobileNo": "12389586312",
         "mobileVerified": true,
         "faxNumber": "122341",
         "companyName": "Lesus",
@@ -528,7 +552,7 @@ describe('contact model validation', () => {
         "lastName": "Ros",
         "email": "obj1@gmail.com",
         "emailVerified": true,
-        "phoneNo": "265123",
+        "phoneNo": "8521478963",
         "mobileNo": "988956312",
         "mobileVerified": true,
         "faxNumber": "122341",
@@ -548,8 +572,8 @@ describe('contact model validation', () => {
         "lastName": "Ros",
         "email": "obj1@gamil.com",
         "emailVerified": true,
-        "phoneNo": "265123",
-        "mobileNo": "9889586312",
+        "phoneNo": "12674574123",
+        "mobileNo": "976586312",
         "mobileVerified": true,
         "faxNumber": "122341",
         "companyName": "Lesus",

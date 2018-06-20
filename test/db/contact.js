@@ -32,7 +32,7 @@ describe("db contact testing", () => {
     "lastName": "p",
     "email": "vicky@gmail.com",
     "emailVerified": true,
-    "phoneNo": "264123",
+    "phoneNo": "912452364123",
     "mobileNo": "9878586312",
     "mobileVerified": true,
     "faxNumber": "1221",
@@ -52,8 +52,8 @@ describe("db contact testing", () => {
     "lastName": "R",
     "email": "vicky@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "265123",
-    "mobileNo": "9888586312",
+    "phoneNo": "812541267",
+    "mobileNo": "888586312",
     "mobileVerified": true,
     "faxNumber": "122341",
     "companyName": "Evolvus",
@@ -72,7 +72,7 @@ describe("db contact testing", () => {
     "lastName": "R",
     "email": "vinai@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "365123",
+    "phoneNo": "365120123",
     "mobileNo": "8888586312",
     "mobileVerified": false,
     "faxNumber": "122341",
@@ -92,8 +92,8 @@ describe("db contact testing", () => {
     "lastName": "R",
     "email": "Ram@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "265123",
-    "mobileNo": "9888586312",
+    "phoneNo": "81239678",
+    "mobileNo": "9688586312",
     "mobileVerified": true,
     "faxNumber": "122341",
     "companyName": "Wipro",
@@ -125,10 +125,10 @@ describe("db contact testing", () => {
         "firstName": "vignesh",
         "middleName": "varan",
         "lastName": "p",
-        "email": "vicky@gmail.com",
+        "email": "vicky@gamil.com",
         "emailVerified": true,
-        "phoneNo": "264123",
-        "mobileNo": "9878586312",
+        "phoneNo": "264178223",
+        "mobileNo": "9878586378",
         "mobileVerified": true,
         "faxNumber": "1221",
         "companyName": "Evolvus",
@@ -165,6 +165,87 @@ describe("db contact testing", () => {
   });
 
   describe("testing contact.findAll by limit", () => {
+    let object1 = {
+      // add a valid contact object
+      "tenantId": "tenId",
+      "firstName": "vignesh",
+      "middleName": "varan",
+      "lastName": "p",
+      "email": "vicky@gmail.com",
+      "emailVerified": true,
+      "phoneNo": "912452364123",
+      "mobileNo": "9878586312",
+      "mobileVerified": true,
+      "faxNumber": "1221",
+      "companyName": "Evolvus",
+      "Address1": "Bangalore",
+      "Address2": "chennai",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
+      "zipCode": "6868"
+    };
+    let object2 = {
+      // add a valid contact object
+      "tenantId": "tenIdOne",
+      "firstName": "vicky",
+      "middleName": "saran",
+      "lastName": "R",
+      "email": "vicky@yahoo.com",
+      "emailVerified": true,
+      "phoneNo": "812541267",
+      "mobileNo": "888586312",
+      "mobileVerified": true,
+      "faxNumber": "122341",
+      "companyName": "Evolvus",
+      "Address1": "Mgroad",
+      "Address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
+      "zipCode": "686834"
+    };
+    let object3 = {
+      // add a valid contact object
+      "tenantId": "tenIdTwo",
+      "firstName": "vinai",
+      "middleName": "saran",
+      "lastName": "R",
+      "email": "vinai@yahoo.com",
+      "emailVerified": true,
+      "phoneNo": "365120123",
+      "mobileNo": "8888586312",
+      "mobileVerified": false,
+      "faxNumber": "122341",
+      "companyName": "Evolvus",
+      "Address1": "Mgroad",
+      "Address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
+      "zipCode": "686834"
+    };
+    let object4 = {
+      // add a valid contact object
+      "tenantId": "tenIdFour",
+      "firstName": "Ram",
+      "middleName": "saran",
+      "lastName": "R",
+      "email": "Ram@yahoo.com",
+      "emailVerified": true,
+      "phoneNo": "812396787",
+      "mobileNo": "9688586312",
+      "mobileVerified": true,
+      "faxNumber": "122341",
+      "companyName": "Wipro",
+      "Address1": "City-road",
+      "Address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
+      "zipCode": "686834"
+    };
+
     // 1. Delete all records in the table and insert
     //    4 new records.
     // find -should return an array of size equal to value of limit with the
@@ -195,7 +276,8 @@ describe("db contact testing", () => {
           expect(docs.length)
             .to.equal(3);
           expect(docs[0])
-            .to.include(object1);
+            .to.have.property('email')
+            .to.eql('vicky@gmail.com');
           done();
         }, (err) => {
           done(err);
@@ -271,8 +353,8 @@ describe("db contact testing", () => {
       "lastName": "R",
       "email": "vicky@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "265123",
-      "mobileNo": "9888586312",
+      "phoneNo": "751789999",
+      "mobileNo": "89128586312",
       "mobileVerified": true,
       "faxNumber": "122341",
       "companyName": "Evolvus",
@@ -361,8 +443,8 @@ describe("db contact testing", () => {
       "lastName": "R",
       "email": "contact1@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "265123",
-      "mobileNo": "9888586312",
+      "phoneNo": "81009811111",
+      "mobileNo": "5688586312",
       "mobileVerified": true,
       "faxNumber": "122341",
       "companyName": "Evolvus",
@@ -381,8 +463,8 @@ describe("db contact testing", () => {
       "lastName": "R",
       "email": "contact2@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "265123",
-      "mobileNo": "9888586312",
+      "phoneNo": "1000128963",
+      "mobileNo": "7888586312",
       "mobileVerified": true,
       "faxNumber": "122341",
       "companyName": "Evolvus",
