@@ -1,35 +1,41 @@
 const debug = require("debug")("evolvus-contact:index");
 const contactSchema = require("./model/contactSchema")
   .schema;
+var contactDBschema = require("./db/contactSchema");
 const contactCollection = require("./db/contact");
 const validate = require("jsonschema")
   .validate;
-const docketClient=require("evolvus-docket-client");
+const docketClient = require("evolvus-docket-client");
 
-var docketObject={
+var docketObject = {
   // required fields
-  application:"PLATFORM",
-  source:"contact",
-  name:"",
-  createdBy:"",
-  ipAddress:"",
-  status:"SUCCESS", //by default
-  eventDateTime:Date.now(),
-  keyDataAsJSON:"",
-  details:"",
+  application: "PLATFORM",
+  source: "contact",
+  name: "",
+  createdBy: "",
+  ipAddress: "",
+  status: "SUCCESS", //by default
+  eventDateTime: Date.now(),
+  keyDataAsJSON: "",
+  details: "",
   //non required fields
-  level:""
+  level: ""
+};
+
+module.exports.contact = {
+  contactDBschema,
+  contactSchema
 };
 
 module.exports.validate = (contactObject) => {
   return new Promise((resolve, reject) => {
     try {
-      if(typeof contactObject==="undefined" ) {
+      if (typeof contactObject === "undefined") {
         throw new Error("IllegalArgumentException:contactObject is undefined");
       }
       var res = validate(contactObject, contactSchema);
       debug("validation status: ", JSON.stringify(res));
-      if(res.valid) {
+      if (res.valid) {
         resolve(res.valid);
       } else {
         reject(res.errors);
@@ -45,16 +51,16 @@ module.exports.validate = (contactObject) => {
 module.exports.save = (contactObject) => {
   return new Promise((resolve, reject) => {
     try {
-      if(typeof contactObject === 'undefined' || contactObject == null) {
-         throw new Error("IllegalArgumentException: contactObject is null or undefined");
+      if (typeof contactObject === 'undefined' || contactObject == null) {
+        throw new Error("IllegalArgumentException: contactObject is null or undefined");
       }
-      docketObject.name="contact_save";
-      docketObject.keyDataAsJSON=JSON.stringify(contactObject);
-      docketObject.details=`contact creation initiated`;
+      docketObject.name = "contact_save";
+      docketObject.keyDataAsJSON = JSON.stringify(contactObject);
+      docketObject.details = `contact creation initiated`;
       docketClient.postToDocket(docketObject);
       var res = validate(contactObject, contactSchema);
       debug("validation status: ", JSON.stringify(res));
-      if(!res.valid) {
+      if (!res.valid) {
         reject(res.errors);
       }
 
@@ -70,9 +76,9 @@ module.exports.save = (contactObject) => {
         reject(e);
       });
     } catch (e) {
-      docketObject.name="contact_ExceptionOnSave";
-      docketObject.keyDataAsJSON=JSON.stringify(contactObject);
-      docketObject.details=`caught Exception on contact_save ${e.message}`;
+      docketObject.name = "contact_ExceptionOnSave";
+      docketObject.keyDataAsJSON = JSON.stringify(contactObject);
+      docketObject.details = `caught Exception on contact_save ${e.message}`;
       docketClient.postToDocket(docketObject);
       debug(`caught exception ${e}`);
       reject(e);
@@ -89,9 +95,9 @@ module.exports.getAll = (limit) => {
       if (typeof(limit) == "undefined" || limit == null) {
         throw new Error("IllegalArgumentException: limit is null or undefined");
       }
-      docketObject.name="contact_getAll";
-      docketObject.keyDataAsJSON=`getAll with limit ${limit}`;
-      docketObject.details=`contact getAll method`;
+      docketObject.name = "contact_getAll";
+      docketObject.keyDataAsJSON = `getAll with limit ${limit}`;
+      docketObject.details = `contact getAll method`;
       docketClient.postToDocket(docketObject);
 
       contactCollection.findAll(limit).then((docs) => {
@@ -102,9 +108,9 @@ module.exports.getAll = (limit) => {
         reject(e);
       });
     } catch (e) {
-      docketObject.name="contact_ExceptionOngetAll";
-      docketObject.keyDataAsJSON="contactObject";
-      docketObject.details=`caught Exception on contact_getAll ${e.message}`;
+      docketObject.name = "contact_ExceptionOngetAll";
+      docketObject.keyDataAsJSON = "contactObject";
+      docketObject.details = `caught Exception on contact_getAll ${e.message}`;
       docketClient.postToDocket(docketObject);
       debug(`caught exception ${e}`);
       reject(e);
@@ -121,9 +127,9 @@ module.exports.getById = (id) => {
       if (typeof(id) == "undefined" || id == null) {
         throw new Error("IllegalArgumentException: id is null or undefined");
       }
-      docketObject.name="contact_getById";
-      docketObject.keyDataAsJSON=`contactObject id is ${id}`;
-      docketObject.details=`contact getById initiated`;
+      docketObject.name = "contact_getById";
+      docketObject.keyDataAsJSON = `contactObject id is ${id}`;
+      docketObject.details = `contact getById initiated`;
       docketClient.postToDocket(docketObject);
 
       contactCollection.findById(id)
@@ -142,9 +148,9 @@ module.exports.getById = (id) => {
         });
 
     } catch (e) {
-      docketObject.name="contact_ExceptionOngetById";
-      docketObject.keyDataAsJSON=`contactObject id is ${id}`;
-      docketObject.details=`caught Exception on contact_getById ${e.message}`;
+      docketObject.name = "contact_ExceptionOngetById";
+      docketObject.keyDataAsJSON = `contactObject id is ${id}`;
+      docketObject.details = `caught Exception on contact_getById ${e.message}`;
       docketClient.postToDocket(docketObject);
       debug(`caught exception ${e}`);
       reject(e);
@@ -152,18 +158,18 @@ module.exports.getById = (id) => {
   });
 };
 
-module.exports.getOne=(attribute,value)=> {
-  return new Promise((resolve,reject)=> {
+module.exports.getOne = (attribute, value) => {
+  return new Promise((resolve, reject) => {
     try {
       if (attribute == null || value == null || typeof attribute === 'undefined' || typeof value === 'undefined') {
         throw new Error("IllegalArgumentException: attribute/value is null or undefined");
       }
 
-      docketObject.name="contact_getOne";
-      docketObject.keyDataAsJSON=`contactObject ${attribute} with value ${value}`;
-      docketObject.details=`contact getOne initiated`;
+      docketObject.name = "contact_getOne";
+      docketObject.keyDataAsJSON = `contactObject ${attribute} with value ${value}`;
+      docketObject.details = `contact getOne initiated`;
       docketClient.postToDocket(docketObject);
-      contactCollection.findOne(attribute,value).then((data)=> {
+      contactCollection.findOne(attribute, value).then((data) => {
         if (data) {
           debug(`contact found ${data}`);
           resolve(data);
@@ -172,13 +178,13 @@ module.exports.getOne=(attribute,value)=> {
           debug(`no contact found by this ${attribute} ${value}`);
           resolve({});
         }
-      }).catch((e)=> {
+      }).catch((e) => {
         debug(`failed to find ${e}`);
       });
     } catch (e) {
-      docketObject.name="contact_ExceptionOngetOne";
-      docketObject.keyDataAsJSON=`contactObject ${attribute} with value ${value}`;
-      docketObject.details=`caught Exception on contact_getOne ${e.message}`;
+      docketObject.name = "contact_ExceptionOngetOne";
+      docketObject.keyDataAsJSON = `contactObject ${attribute} with value ${value}`;
+      docketObject.details = `caught Exception on contact_getOne ${e.message}`;
       docketClient.postToDocket(docketObject);
       debug(`caught exception ${e}`);
       reject(e);
@@ -186,18 +192,18 @@ module.exports.getOne=(attribute,value)=> {
   });
 };
 
-module.exports.getMany=(attribute,value)=> {
-  return new Promise((resolve,reject)=> {
+module.exports.getMany = (attribute, value) => {
+  return new Promise((resolve, reject) => {
     try {
       if (attribute == null || value == null || typeof attribute === 'undefined' || typeof value === 'undefined') {
         throw new Error("IllegalArgumentException: attribute/value is null or undefined");
       }
 
-      docketObject.name="contact_getMany";
-      docketObject.keyDataAsJSON=`contactObject ${attribute} with value ${value}`;
-      docketObject.details=`contact getMany initiated`;
+      docketObject.name = "contact_getMany";
+      docketObject.keyDataAsJSON = `contactObject ${attribute} with value ${value}`;
+      docketObject.details = `contact getMany initiated`;
       docketClient.postToDocket(docketObject);
-      contactCollection.findMany(attribute,value).then((data)=> {
+      contactCollection.findMany(attribute, value).then((data) => {
         if (data) {
           debug(`contact found ${data}`);
           resolve(data);
@@ -206,13 +212,13 @@ module.exports.getMany=(attribute,value)=> {
           debug(`no contact found by this ${attribute} ${value}`);
           resolve([]);
         }
-      }).catch((e)=> {
+      }).catch((e) => {
         debug(`failed to find ${e}`);
       });
     } catch (e) {
-      docketObject.name="contact_ExceptionOngetMany";
-      docketObject.keyDataAsJSON=`contactObject ${attribute} with value ${value}`;
-      docketObject.details=`caught Exception on contact_getMany ${e.message}`;
+      docketObject.name = "contact_ExceptionOngetMany";
+      docketObject.keyDataAsJSON = `contactObject ${attribute} with value ${value}`;
+      docketObject.details = `caught Exception on contact_getMany ${e.message}`;
       docketClient.postToDocket(docketObject);
       debug(`caught exception ${e}`);
       reject(e);
