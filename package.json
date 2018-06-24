@@ -1,6 +1,6 @@
 {
   "name": "evolvus-contact",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Contact encapsulates Contact functionality across all Evolvus products",
   "main": "index.js",
   "scripts": {
