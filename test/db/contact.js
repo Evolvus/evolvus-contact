@@ -30,19 +30,21 @@ describe("db contact testing", () => {
     "firstName": "vignesh",
     "middleName": "varan",
     "lastName": "p",
-    "email": "vicky@gmail.com",
+    "EmailID": "vickyccc@gmail.com",
     "emailVerified": true,
-    "phoneNo": "912452364123",
-    "mobileNo": "9878586312",
+    "PhoneNumber": "912452364123",
+    "MobileNumber": "9878586312",
     "mobileVerified": true,
-    "faxNumber": "1221",
+    "Fax": "12217865421",
     "companyName": "Evolvus",
     "Address1": "Bangalore",
     "Address2": "chennai",
-    "city": "Bangalore",
-    "state": "karnataka",
-    "country": "India",
-    "zipCode": "6868"
+    "City": "Bangalore",
+    "State": "karnataka",
+    "Country": "India",
+    "zipCode": "6868",
+    "createdDate": new Date().toISOString(),
+    "lastUpdatedDate": new Date().toISOString()
   };
   let object2 = {
     // add a valid contact object
@@ -50,19 +52,21 @@ describe("db contact testing", () => {
     "firstName": "vicky",
     "middleName": "saran",
     "lastName": "R",
-    "email": "vicky@yahoo.com",
+    "EmailID": "vickyqwer@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "812541267",
-    "mobileNo": "888586312",
+    "PhoneNumber": "812541267",
+    "MobileNumber": "888586312",
     "mobileVerified": true,
-    "faxNumber": "122341",
+    "Fax": "12745892341",
     "companyName": "Evolvus",
     "Address1": "Mgroad",
     "Address2": "Madiwala",
-    "city": "Bangalore",
-    "state": "karnataka",
-    "country": "India",
-    "zipCode": "686834"
+    "City": "Bangalore",
+    "State": "karnataka",
+    "Country": "India",
+    "zipCode": "686834",
+    "createdDate": new Date().toISOString(),
+    "lastUpdatedDate": new Date().toISOString()
   };
   let object3 = {
     // add a valid contact object
@@ -70,19 +74,21 @@ describe("db contact testing", () => {
     "firstName": "vinai",
     "middleName": "saran",
     "lastName": "R",
-    "email": "vinai@yahoo.com",
+    "EmailID": "vinai@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "365120123",
-    "mobileNo": "8888586312",
+    "PhoneNumber": "365120123",
+    "MobileNumber": "8888586312",
     "mobileVerified": false,
-    "faxNumber": "122341",
+    "Fax": "1223412041",
     "companyName": "Evolvus",
     "Address1": "Mgroad",
     "Address2": "Madiwala",
-    "city": "Bangalore",
-    "state": "karnataka",
-    "country": "India",
-    "zipCode": "686834"
+    "City": "Bangalore",
+    "State": "karnataka",
+    "Country": "India",
+    "zipCode": "686834",
+    "createdDate": new Date().toISOString(),
+    "lastUpdatedDate": new Date().toISOString()
   };
   let object4 = {
     // add a valid contact object
@@ -90,19 +96,21 @@ describe("db contact testing", () => {
     "firstName": "Ram",
     "middleName": "saran",
     "lastName": "R",
-    "email": "Ram@yahoo.com",
+    "EmailID": "Ramram@yahoo.com",
     "emailVerified": true,
-    "phoneNo": "81239678",
-    "mobileNo": "9688586312",
+    "PhoneNumber": "81239678",
+    "MobileNumber": "9688586312",
     "mobileVerified": true,
-    "faxNumber": "122341",
+    "Fax": "1247502341",
     "companyName": "Wipro",
     "Address1": "City-road",
     "Address2": "Madiwala",
-    "city": "Bangalore",
-    "state": "karnataka",
-    "country": "India",
-    "zipCode": "686834"
+    "City": "Bangalore",
+    "State": "karnataka",
+    "Country": "India",
+    "zipCode": "686834",
+    "createdDate": new Date().toISOString(),
+    "lastUpdatedDate": new Date().toISOString()
   };
 
 
@@ -125,23 +133,26 @@ describe("db contact testing", () => {
         "firstName": "vignesh",
         "middleName": "varan",
         "lastName": "p",
-        "email": "vicky@gamil.com",
+        "EmailID": "vickerty@gamil.com",
         "emailVerified": true,
-        "phoneNo": "264178223",
-        "mobileNo": "9878586378",
+        "PhoneNumber": "264178223",
+        "MobileNumber": "9878586378",
         "mobileVerified": true,
-        "faxNumber": "1221",
+        "Fax": "12274521",
         "companyName": "Evolvus",
         "Address1": "Bangalore",
         "Address2": "chennai",
-        "city": "Bangalore",
-        "state": "karnataka",
-        "country": "India",
-        "zipCode": "6868"
+        "City": "Bangalore",
+        "State": "karnataka",
+        "Country": "India",
+        "zipCode": "6868",
+        "createdDate": new Date().toISOString(),
+        "lastUpdatedDate": new Date().toISOString()
       };
       let res = contact.save(testcontactCollection);
       expect(res)
-        .to.eventually.include(testcontactCollection)
+        .to.eventually.have.property('EmailID')
+        .to.eql('vickerty@gamil.com')
         .notify(done);
     });
 
@@ -154,7 +165,7 @@ describe("db contact testing", () => {
         "firstName": "vignesh",
         "middleName": "varan",
         "lastName": "p",
-        "email": "vicky@gmail.com",
+        "EmailID": "vickdfdfy@gmail.com",
         "emailVerified": true
       };
       let res = contact.save(invalidObject);
@@ -171,19 +182,21 @@ describe("db contact testing", () => {
       "firstName": "vignesh",
       "middleName": "varan",
       "lastName": "p",
-      "email": "vicky@gmail.com",
+      "EmailID": "vickysss@gmail.com",
       "emailVerified": true,
-      "phoneNo": "912452364123",
-      "mobileNo": "9878586312",
+      "PhoneNumber": "912452364123",
+      "MobileNumber": "9878586312",
       "mobileVerified": true,
-      "faxNumber": "1221",
+      "Fax": "12414121",
       "companyName": "Evolvus",
       "Address1": "Bangalore",
       "Address2": "chennai",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "6868"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "6868",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
     let object2 = {
       // add a valid contact object
@@ -191,19 +204,21 @@ describe("db contact testing", () => {
       "firstName": "vicky",
       "middleName": "saran",
       "lastName": "R",
-      "email": "vicky@yahoo.com",
+      "EmailID": "vickyrent@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "812541267",
-      "mobileNo": "888586312",
+      "PhoneNumber": "812541267",
+      "MobileNumber": "888586312",
       "mobileVerified": true,
-      "faxNumber": "122341",
+      "Fax": "1201401442341",
       "companyName": "Evolvus",
       "Address1": "Mgroad",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
     let object3 = {
       // add a valid contact object
@@ -211,19 +226,21 @@ describe("db contact testing", () => {
       "firstName": "vinai",
       "middleName": "saran",
       "lastName": "R",
-      "email": "vinai@yahoo.com",
+      "EmailID": "vinai123@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "365120123",
-      "mobileNo": "8888586312",
+      "PhoneNumber": "365120123",
+      "MobileNumber": "8888586312",
       "mobileVerified": false,
-      "faxNumber": "122341",
+      "Fax": "12000142341",
       "companyName": "Evolvus",
       "Address1": "Mgroad",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
     let object4 = {
       // add a valid contact object
@@ -231,19 +248,21 @@ describe("db contact testing", () => {
       "firstName": "Ram",
       "middleName": "saran",
       "lastName": "R",
-      "email": "Ram@yahoo.com",
+      "EmailID": "Ram@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "812396787",
-      "mobileNo": "9688586312",
+      "PhoneNumber": "812396787",
+      "MobileNumber": "9688586312",
       "mobileVerified": true,
-      "faxNumber": "122341",
+      "Fax": "122312341",
       "companyName": "Wipro",
       "Address1": "City-road",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
 
     // 1. Delete all records in the table and insert
@@ -276,8 +295,8 @@ describe("db contact testing", () => {
           expect(docs.length)
             .to.equal(3);
           expect(docs[0])
-            .to.have.property('email')
-            .to.eql('vicky@gmail.com');
+            .to.have.property('EmailID')
+            .to.eql('vickysss@gmail.com');
           done();
         }, (err) => {
           done(err);
@@ -290,13 +309,15 @@ describe("db contact testing", () => {
     it("should return all records if value of limit parameter is less than 1 i.e, 0 or -1", (done) => {
       let res = contact.findAll(-1);
       expect(res)
+
         .to.be.fulfilled.then((docs) => {
           expect(docs)
             .to.be.a('array');
           expect(docs.length)
             .to.equal(4);
           expect(docs[0])
-            .to.include(object1);
+            .to.have.property('EmailID')
+            .to.eql('vickysss@gmail.com');
           done();
         }, (err) => {
           done(err);
@@ -351,19 +372,21 @@ describe("db contact testing", () => {
       "firstName": "vicky",
       "middleName": "saran",
       "lastName": "R",
-      "email": "vicky@yahoo.com",
+      "EmailID": "vickyram@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "751789999",
-      "mobileNo": "89128586312",
+      "PhoneNumber": "751789999",
+      "MobileNumber": "89128586312",
       "mobileVerified": true,
-      "faxNumber": "122341",
+      "Fax": "1223445631",
       "companyName": "Evolvus",
       "Address1": "Mgroad",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
 
     };
     var id;
@@ -381,7 +404,8 @@ describe("db contact testing", () => {
     it("should return contact identified by Id ", (done) => {
       let res = contact.findById(id);
       expect(res)
-        .to.eventually.include(testObject)
+        .to.eventually.have.property('EmailID')
+        .to.eql('vickyram@yahoo.com')
         .notify(done);
     });
 
@@ -415,16 +439,17 @@ describe("db contact testing", () => {
 
     it("should return object for valid attribute value", (done) => {
       // take one valid attribute and its value
-      let attributename = "email";
-      let attributeValue = "vicky@gmail.com";
+      let attributename = "EmailID";
+      let attributeValue = "vickyccc@gmail.com";
       let res = contact.findOne(attributename, attributeValue);
       expect(res)
-        .to.eventually.include(object1)
+        .to.eventually.have.property('EmailID')
+        .to.eql('vickyccc@gmail.com')
         .notify(done);
     });
 
     it("should return null as no contact is identified by this attribute ", (done) => {
-      let res = contact.findOne(`email`, `wery`);
+      let res = contact.findOne(`EmailID`, `wery`);
       expect(res)
         .to.eventually.to.eql(null)
         .notify(done);
@@ -441,19 +466,21 @@ describe("db contact testing", () => {
       "firstName": "contact1",
       "middleName": "saran",
       "lastName": "R",
-      "email": "contact1@yahoo.com",
+      "EmailID": "contact1@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "81009811111",
-      "mobileNo": "5688586312",
+      "PhoneNumber": "81009811111",
+      "MobileNumber": "5688586312",
       "mobileVerified": true,
-      "faxNumber": "122341",
+      "Fax": "1223436521",
       "companyName": "Evolvus",
       "Address1": "Mgroad",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
     let contact2 = {
       //add valid object with one attribute value same as "contact1"
@@ -461,19 +488,21 @@ describe("db contact testing", () => {
       "firstName": "contact2",
       "middleName": "saran",
       "lastName": "R",
-      "email": "contact2@yahoo.com",
+      "EmailID": "contact2@yahoo.com",
       "emailVerified": true,
-      "phoneNo": "1000128963",
-      "mobileNo": "7888586312",
+      "PhoneNumber": "1000128963",
+      "MobileNumber": "7888586312",
       "mobileVerified": true,
-      "faxNumber": "122341",
+      "Fax": "1227896341",
       "companyName": "Evolvus",
       "Address1": "Mgroad",
       "Address2": "Madiwala",
-      "city": "Bangalore",
-      "state": "karnataka",
-      "country": "India",
-      "zipCode": "686834"
+      "City": "Bangalore",
+      "State": "karnataka",
+      "Country": "India",
+      "zipCode": "686834",
+      "createdDate": new Date().toISOString(),
+      "lastUpdatedDate": new Date().toISOString()
     };
     // delete all records and insert two contacts
     beforeEach((done) => {
@@ -491,7 +520,7 @@ describe("db contact testing", () => {
 
     it("should return array of objects for valid attribute value", (done) => {
       // take one valid attribute and its value
-      let attributename = "email";
+      let attributename = "EmailID";
       let attributeValue = "contact2@yahoo.com";
       let res = contact.findMany(attributename, attributeValue);
       expect(res).to.eventually.be.a("array");
@@ -501,7 +530,7 @@ describe("db contact testing", () => {
     });
 
     it("should return empty array as no contact is identified by this attribute ", (done) => {
-      let res = contact.findMany(`email`, `xyz`);
+      let res = contact.findMany(`EmailID`, `xyz`);
       expect(res)
         .to.eventually.to.eql([])
         .notify(done);
