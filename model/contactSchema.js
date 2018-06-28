@@ -26,7 +26,7 @@ module.exports.schema = {
       "minLength": 1,
       "maxLength": 50
     },
-    "EmailID": {
+    "emailId": {
       "type": "string",
       "minLength": 8,
       "maxLength": 50,
@@ -35,13 +35,13 @@ module.exports.schema = {
     "emailVerified": {
       "type": "boolean"
     },
-    "PhoneNumber": {
+    "phoneNumber": {
       "type": "string",
       "minLength": 9,
       "maxLength": 15,
       "unique": true
     },
-    "MobileNumber": {
+    "mobileNumber": {
       "type": "string",
       "minLength": 9,
       "maxLength": 15,
@@ -50,7 +50,7 @@ module.exports.schema = {
     "mobileVerified": {
       "type": "boolean"
     },
-    "Fax": {
+    "faxNumber": {
       "type": "string",
       "minLength": 9,
       "maxLength": 15
@@ -60,19 +60,19 @@ module.exports.schema = {
       "minLength": 1,
       "maxLength": 64
     },
-    "Address1": {
+    "address1": {
       "type": "string"
     },
-    "Address2": {
+    "address2": {
       "type": "string"
     },
-    "City": {
+    "city": {
       "type": "string"
     },
-    "State": {
+    "state": {
       "type": "string"
     },
-    "Country": {
+    "country": {
       "type": "string"
     },
     "zipCode": {
@@ -87,5 +87,5 @@ module.exports.schema = {
       "format": "date-time"
     }
   },
-  "required": ["tenantId", "firstName", "lastName", "EmailID", "MobileNumber", "PhoneNumber", "Fax", "City", "State", "Country", "createdDate", "lastUpdatedDate"]
+  "required": ["tenantId", "firstName", "lastName", "emailId", "mobileNumber", "phoneNumber", "faxNumber", "city", "state", "country", "createdDate", "lastUpdatedDate"]
 };

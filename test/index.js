@@ -24,18 +24,18 @@ describe('contact model validation', () => {
     "firstName": "contactObj",
     "middleName": "saravanan",
     "lastName": "R",
-    "EmailID": "hari2@yahoo.com",
+    "emailId": "hari2@yahoo.com",
     "emailVerified": true,
-    "PhoneNumber": "789222987",
-    "MobileNumber": "9888631278",
+    "phoneNumber": "789222987",
+    "mobileNumber": "9888631278",
     "mobileVerified": true,
-    "Fax": "12234852141",
+    "faxNumber": "12234852141",
     "companyName": "Evolvus",
-    "Address1": "Mgroad",
-    "Address2": "Madiwala",
-    "City": "Bangalore",
-    "State": "karnataka",
-    "Country": "India",
+    "address1": "Mgroad",
+    "address2": "Madiwala",
+    "city": "Bangalore",
+    "state": "karnataka",
+    "country": "India",
     "zipCode": "686834",
     "createdDate": new Date().toISOString(),
     "lastUpdatedDate": new Date().toISOString()
@@ -47,7 +47,7 @@ describe('contact model validation', () => {
     "firstName": "contactObj",
     "middleName": "saravanan",
     "lastName": "R",
-    "EmailID": "saravanan2@yahoo.com",
+    "emailId": "saravanan2@yahoo.com",
     "emailVerified": true,
   };
 
@@ -126,8 +126,8 @@ describe('contact model validation', () => {
         var result = contact.save(contactObject);
         //replace anyAttribute with one of the valid attribute of a contact Object
         expect(result)
-          .to.eventually.have.property("EmailID")
-          .to.eql(contactObject.EmailID)
+          .to.eventually.have.property("emailId")
+          .to.eql(contactObject.emailId)
           .notify(done);
       } catch (e) {
         expect.fail(e, null, `saving contact object should not throw exception: ${e}`);
@@ -154,18 +154,18 @@ describe('contact model validation', () => {
         "firstName": "Obj1",
         "middleName": "saravanan",
         "lastName": "R",
-        "EmailID": "obj1@yahoo.com",
+        "emailId": "obj1@yahoo.com",
         "emailVerified": true,
-        "PhoneNumber": "911234921678",
-        "MobileNumber": "7889586312",
+        "phoneNumber": "911234921678",
+        "mobileNumber": "7889586312",
         "mobileVerified": true,
-        "Fax": "1223475611",
+        "faxNumber": "1223475611",
         "companyName": "Lesus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "India",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "India",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -176,18 +176,18 @@ describe('contact model validation', () => {
         "firstName": "Obj2",
         "middleName": "ravanan",
         "lastName": "R",
-        "EmailID": "ravanan2@yahoo.com",
+        "emailId": "ravanan2@yahoo.com",
         "emailVerified": true,
-        "PhoneNumber": "785124102",
-        "MobileNumber": "6888586312",
+        "phoneNumber": "785124102",
+        "mobileNumber": "6888586312",
         "mobileVerified": true,
-        "Fax": "1220000341",
+        "faxNumber": "1220000341",
         "companyName": "Evolvus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "India",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "India",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -199,18 +199,18 @@ describe('contact model validation', () => {
       "firstName": "contactObj",
       "middleName": "vananm",
       "lastName": "R",
-      "EmailID": "svananmn2@yahoo.com",
+      "emailId": "svananmn2@yahoo.com",
       "emailVerified": true,
-      "PhoneNumber": "26547845632",
-      "MobileNumber": "8888586312",
+      "phoneNumber": "26547845632",
+      "mobileNumber": "8888586312",
       "mobileVerified": true,
-      "Fax": "12412582341",
+      "faxNumber": "12412582341",
       "companyName": "Evolvus",
-      "Address1": "Mgroad",
-      "Address2": "Madiwala",
-      "City": "Bangalore",
-      "State": "karnataka",
-      "Country": "India",
+      "address1": "Mgroad",
+      "address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
       "zipCode": "686834",
       "createdDate": new Date().toISOString(),
       "lastUpdatedDate": new Date().toISOString()
@@ -341,18 +341,18 @@ describe('contact model validation', () => {
       "firstName": "Obj1",
       "middleName": "saravanan",
       "lastName": "R",
-      "EmailID": "obj1@yahoo.com",
+      "emailId": "obj1@yahoo.com",
       "emailVerified": true,
-      "PhoneNumber": "4921678365",
-      "MobileNumber": "7889586312",
+      "phoneNumber": "4921678365",
+      "mobileNumber": "7889586312",
       "mobileVerified": true,
-      "Fax": "1785422341",
+      "faxNumber": "1785422341",
       "companyName": "Lesus",
-      "Address1": "Mgroad",
-      "Address2": "Madiwala",
-      "City": "Bangalore",
-      "State": "karnataka",
-      "Country": "India",
+      "address1": "Mgroad",
+      "address2": "Madiwala",
+      "city": "Bangalore",
+      "state": "karnataka",
+      "country": "India",
       "zipCode": "686834",
       "createdDate": new Date().toISOString(),
       "lastUpdatedDate": new Date().toISOString()
@@ -432,18 +432,18 @@ describe('contact model validation', () => {
         "firstName": "idObj1",
         "middleName": "idsaravanan",
         "lastName": "Ros",
-        "EmailID": "obj1@gmail.com",
+        "emailId": "obj1@gmail.com",
         "emailVerified": true,
-        "PhoneNumber": "12345678910",
-        "MobileNumber": "7899586312",
+        "phoneNumber": "12345678910",
+        "mobileNumber": "7899586312",
         "mobileVerified": true,
-        "Fax": "128962341",
+        "faxNumber": "128962341",
         "companyName": "Lesus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "India",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "India",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -454,18 +454,18 @@ describe('contact model validation', () => {
         "firstName": "tenObj1",
         "middleName": "saravanan",
         "lastName": "Rer",
-        "EmailID": "obj1@yahoo.com",
+        "emailId": "obj1@yahoo.com",
         "emailVerified": true,
-        "PhoneNumber": "7896543214",
-        "MobileNumber": "12389586312",
+        "phoneNumber": "7896543214",
+        "mobileNumber": "12389586312",
         "mobileVerified": true,
-        "Fax": "12233657441",
+        "faxNumber": "12233657441",
         "companyName": "Lesus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "India",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "India",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -483,10 +483,10 @@ describe('contact model validation', () => {
     it("should return one contact record identified by attribute", (done) => {
       try {
         // take one attribute from object1 or object2 and its value
-        let res = contact.getOne(`EmailID`, `obj1@yahoo.com`);
+        let res = contact.getOne(`emailId`, `obj1@yahoo.com`);
         expect(res)
           .to.eventually.be.a("object")
-          .to.have.property('EmailID')
+          .to.have.property('emailId')
           .to.eql('obj1@yahoo.com')
           .notify(done);
       } catch (e) {
@@ -497,7 +497,7 @@ describe('contact model validation', () => {
     it('should return empty object i.e. {} as no contact is identified by this attribute', (done) => {
       try {
         // replace validAttribute and add a bad value to it
-        var res = contact.getOne(`EmailID`, `yauva`);
+        var res = contact.getOne(`emailId`, `yauva`);
         expect(res).to.eventually.to.eql({})
           .notify(done);
       } catch (e) {
@@ -522,7 +522,7 @@ describe('contact model validation', () => {
       try {
         // replace validAttribute with a valid attribute name
         let undefinedValue;
-        let res = contact.getOne(`EmailID`, undefinedValue);
+        let res = contact.getOne(`emailId`, undefinedValue);
         expect(res)
           .to.eventually.to.be.rejectedWith("IllegalArgumentException")
           .notify(done);
@@ -564,18 +564,18 @@ describe('contact model validation', () => {
         "firstName": "getmany",
         "middleName": "idsaravanan",
         "lastName": "Ros",
-        "EmailID": "obj1@gmail.com",
+        "emailId": "obj1@gmail.com",
         "emailVerified": true,
-        "PhoneNumber": "8521478963",
-        "MobileNumber": "988956312",
+        "phoneNumber": "8521478963",
+        "mobileNumber": "988956312",
         "mobileVerified": true,
-        "Fax": "1278962341",
+        "faxNumber": "1278962341",
         "companyName": "Lesus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "china",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "china",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -586,18 +586,18 @@ describe('contact model validation', () => {
         "firstName": "getting",
         "middleName": "idsaravanan",
         "lastName": "Ros",
-        "EmailID": "obj1@gamil.com",
+        "emailId": "obj1@gamil.com",
         "emailVerified": true,
-        "PhoneNumber": "12674574123",
-        "MobileNumber": "976586312",
+        "phoneNumber": "12674574123",
+        "mobileNumber": "976586312",
         "mobileVerified": true,
-        "Fax": "12234123541",
+        "faxNumber": "12234123541",
         "companyName": "Lesus",
-        "Address1": "Mgroad",
-        "Address2": "Madiwala",
-        "City": "Bangalore",
-        "State": "karnataka",
-        "Country": "UK",
+        "address1": "Mgroad",
+        "address2": "Madiwala",
+        "city": "Bangalore",
+        "state": "karnataka",
+        "country": "UK",
         "zipCode": "686834",
         "createdDate": new Date().toISOString(),
         "lastUpdatedDate": new Date().toISOString()
@@ -615,7 +615,7 @@ describe('contact model validation', () => {
     it("should return array of contact records identified by attribute", (done) => {
       try {
         // take one attribute from object1 or object2 and its value
-        let res = contact.getMany(`EmailID`, `obj1@gamil.com`);
+        let res = contact.getMany(`emailId`, `obj1@gamil.com`);
         expect(res).to.eventually.be.a("array");
         //enter proper length according to input value
         expect(res).to.eventually.have.length(1);
@@ -628,7 +628,7 @@ describe('contact model validation', () => {
     it('should return empty array i.e. [] as no contact is identified by this attribute', (done) => {
       try {
         // replace validAttribute and add a bad value to it
-        var res = contact.getMany(`EmailID`, `zxye`);
+        var res = contact.getMany(`emailId`, `zxye`);
         expect(res).to.eventually.to.eql([])
           .notify(done);
       } catch (e) {
@@ -653,7 +653,7 @@ describe('contact model validation', () => {
       try {
         // replace validAttribute with a valid attribute name
         let undefinedValue;
-        let res = contact.getMany(`EmailID`, undefinedValue);
+        let res = contact.getMany(`emailId`, undefinedValue);
         expect(res)
           .to.eventually.to.be.rejectedWith("IllegalArgumentException")
           .notify(done);
@@ -677,7 +677,7 @@ describe('contact model validation', () => {
     it("should throw IllegalArgumentException for null value parameter ", (done) => {
       try {
         //replace attributeValue with a valid attribute name
-        let res = contact.getMany('EmailID', null);
+        let res = contact.getMany('emailId', null);
         expect(res)
           .to.eventually.to.be.rejectedWith("IllegalArgumentException")
           .notify(done);

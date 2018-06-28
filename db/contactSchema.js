@@ -27,7 +27,7 @@ var contactSchema = new mongoose.Schema({
     minLength: 1,
     maxLength: 50
   },
-  EmailID: {
+  emailId: {
     type: String,
     required: true,
     minLength: 8,
@@ -42,7 +42,7 @@ var contactSchema = new mongoose.Schema({
   emailVerified: {
     type: Boolean
   },
-  PhoneNumber: {
+  phoneNumber: {
     type: String,
     minLength: 5,
     maxLength: 15,
@@ -54,7 +54,7 @@ var contactSchema = new mongoose.Schema({
       message: "{PATH} can contain only Numbers"
     }
   },
-  MobileNumber: {
+  mobileNumber: {
     type: String,
     required: true,
     minLength: 5,
@@ -70,14 +70,14 @@ var contactSchema = new mongoose.Schema({
   mobileVerified: {
     type: Boolean
   },
-  Fax: {
+  faxNumber: {
     type: String,
     minLength: 9,
     maxLength: 15,
     required: true,
     validate: {
       validator: function(v) {
-        return /^[0-9+-]*$/.test(v);
+        return /^[0-9\-\+]+$/.test(v);
       },
       message: "{PATH} can contain only Numbers"
     }
@@ -87,21 +87,21 @@ var contactSchema = new mongoose.Schema({
     minLength: 1,
     maxLength: 64
   },
-  Address1: {
+  address1: {
     type: String
   },
-  Address2: {
+  address2: {
     type: String
   },
-  City: {
+  city: {
     type: String,
     required: true
   },
-  State: {
+  state: {
     type: String,
     required: true
   },
-  Country: {
+  country: {
     type: String,
     required: true
   },
