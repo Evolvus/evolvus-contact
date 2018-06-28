@@ -5,7 +5,7 @@ const chaiAsPromised = require("chai-as-promised");
 const expect = chai.expect;
 const contact = require("../../db/contact");
 
-var MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://localhost/TestcontactCollection";
+var MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://10.10.69.204/TestPlatform_Dev";
 
 chai.use(chaiAsPromised);
 
