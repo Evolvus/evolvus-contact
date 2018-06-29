@@ -1,7 +1,7 @@
 const debug = require("debug")("evolvus-contact:index");
 const contactSchema = require("./model/contactSchema")
   .schema;
-var contactDBschema = require("./db/contactSchema");
+const contactDBschema = require("./db/contactSchema");
 const contactCollection = require("./db/contact");
 const validate = require("jsonschema")
   .validate;
