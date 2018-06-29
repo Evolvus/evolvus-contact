@@ -8,9 +8,9 @@ const contactSchema = require("./contactSchema");
 // Creates a contactCollection collection in the database
 var contactCollection = mongoose.model("contactCollection", contactSchema);
 
-module.exports.contactSchema = {
-  contactSchema
-};
+// module.exports.contactSchema = {
+//   contactSchema
+// };
 // Saves the contactCollection object to the database and returns a Promise
 // The assumption here is that the Object is valid
 module.exports.save = (object) => {
