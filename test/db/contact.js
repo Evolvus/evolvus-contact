@@ -178,7 +178,7 @@ describe("db contact testing", () => {
   describe("testing contact.findAll by limit", () => {
     let object1 = {
       // add a valid contact object
-      "tenantId": "tenId",
+      "tenantId": "IVL",
       "firstName": "vignesh",
       "middleName": "varan",
       "lastName": "p",
@@ -200,7 +200,7 @@ describe("db contact testing", () => {
     };
     let object2 = {
       // add a valid contact object
-      "tenantId": "tenIdOne",
+      "tenantId": "IVL",
       "firstName": "vicky",
       "middleName": "saran",
       "lastName": "R",
@@ -222,7 +222,7 @@ describe("db contact testing", () => {
     };
     let object3 = {
       // add a valid contact object
-      "tenantId": "tenIdTwo",
+      "tenantId": "IVL",
       "firstName": "vinai",
       "middleName": "saran",
       "lastName": "R",
@@ -244,7 +244,7 @@ describe("db contact testing", () => {
     };
     let object4 = {
       // add a valid contact object
-      "tenantId": "tenIdFour",
+      "tenantId": "IVL",
       "firstName": "Ram",
       "middleName": "saran",
       "lastName": "R",
@@ -295,8 +295,8 @@ describe("db contact testing", () => {
           expect(docs.length)
             .to.equal(3);
           expect(docs[0])
-            .to.have.property('emailId')
-            .to.eql('vickysss@gmail.com');
+            .to.have.property('tenantId')
+            .to.eql('IVL');
           done();
         }, (err) => {
           done(err);
